@@ -14,8 +14,12 @@ const app = express();
 const config = require("./src/configs/config");
 const db = require("./src/configs/db");
 
-app.use(express.json());
+// use cors
+const cors = require("cors");
+app.use(cors());
 
+// middleware to parse JSON request bodies
+app.use(express.json());
 
 // database connection
 db.connect();
